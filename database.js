@@ -18,10 +18,11 @@ module.exports.createClient = async function () {
 module.exports.createUsersTable = async function (client) {
   try {
     const response = await client.query("CREATE TABLE users ( \
-      userID SERIAL NOT NULL, \
+      userid SERIAL NOT NULL, \
       mail varchar(255) NOT NULL, \
       password varchar(255) NOT NULL, \
-      created_at DATE DEFAULT CURRENT_DATE \
+      created_at DATE DEFAULT CURRENT_DATE, \
+      PRIMARY KEY (userid) \
       );"
     );
     return response;
