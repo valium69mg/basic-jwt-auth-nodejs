@@ -17,7 +17,7 @@ module.exports.createClient = async function () {
 // CREATE USERS TABLE
 module.exports.createUsersTable = async function (client) {
   try {
-    const response = await client.query("CREATE TABLE users ( \
+    const response = await client.query("CREATE TABLE IF NOT EXISTS users ( \
       userid SERIAL NOT NULL, \
       mail varchar(255) NOT NULL, \
       password varchar(255) NOT NULL, \
